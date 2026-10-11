@@ -68,12 +68,15 @@ app/temp_uploads/*
 *.flac
 
 # ------------------------------------------------------------------------------
-# 6. Model Weights & Checkpoints (Excluded from Git; host via Git LFS / external)
+# 6. Model Weights & Checkpoints (Excluded from Git; host via external releases)
 # ------------------------------------------------------------------------------
 *.pth
 *.pt
 *.ckpt
 *.onnx
+*.bin
+*.safetensors
+*.h5
 
 # Explicitly keep the tiny OOD reference stats (10 KB centroid file required for reliability detector)
 !experiments/phase8/ood/reference_stats.pt
@@ -88,11 +91,26 @@ experiments/**/models/
 # ------------------------------------------------------------------------------
 experiments/**/features/
 *.npy
+*.npz
+*.parquet
 
 # ------------------------------------------------------------------------------
 # 8. Generated Plots & Experimental Visualizations
 # ------------------------------------------------------------------------------
 *.png
+*.jpg
+*.jpeg
+!docs/**/*.png
+!docs/*.png
+!docs/**/*.jpg
+!docs/*.jpg
+!app/static/**/*.png
+!app/static/*.png
+!app/static/**/*.svg
+!app/static/*.svg
+!assets/**/*.png
+!assets/*.png
+
 experiments/**/plots/
 experiments/**/visualizations/
 experiments/demo_debug/frames/
@@ -104,6 +122,29 @@ experiments/demo_debug/videos/
 *.log
 experiments/**/logs/
 experiments/**/predictions/
+experiments/**/debug/
+experiments/demo_debug/
+outputs/
+outputs/*
+
+# Raw sample prediction dumps (thousands of per-sample floating point probabilities)
+*predictions*.csv
+predictions.csv
+predictions_*.csv
+experiments/**/predictions*.csv
+
+# Deduplicated root reports in individual experiment folders (canonical copies in metrics/ & reports/)
+experiments/threshold_tuning/*.txt
+experiments/threshold_tuning/*.json
+!experiments/threshold_tuning/config.json
+experiments/threshold_tuning/threshold_summary.csv
+experiments/threshold_tuning/threshold_tuning_report.md
+experiments/class_weight/classification_report.txt
+experiments/class_weight/metrics.json
+
+# Scratch repair utilities
+fix_encoding.py
+scratch_manifest_check.py
 
 # ------------------------------------------------------------------------------
 # 10. Operating System & IDE Specific Files
@@ -115,3 +156,26 @@ desktop.ini
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# ------------------------------------------------------------------------------
+# 11. Local Legacy Copies (Safely preserved on local disk; tracked in docs/ & tools/)
+# ------------------------------------------------------------------------------
+/PHASE8_AUDIT_REPORT.md
+/PROJECT_EVIDENCE_INDEX.md
+/PROJECT_REFERENCES.md
+/PROJECT_RESULTS_TABLES.md
+/PROJECT_SUMMARY_FOR_FINAL_REPORT.md
+/PROJECT_WORKFLOW_AND_DIAGRAMS.md
+/UNVERIFIED_ITEMS_AND_LIMITATIONS.md
+/vision_swin_report.md
+/RESEARCH_EVIDENCE_PACKAGE/
+/audit_inference_investigation.py
+/audit_test_set.py
+/compare_offline_vs_web.py
+/debug_inference_pipeline.py
+/discover_experiments.py
+/repair_spectrogram_cache.py
+/test_fusion_pipeline_diagnostics.py
+/test_loss.py
+/test_model.py
+/verify_3v3_cached_features.py

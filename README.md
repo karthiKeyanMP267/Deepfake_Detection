@@ -147,8 +147,9 @@ In standard multimodal architectures, missing audio causes dimension mismatch or
 ```
 Agentic-Multimodal-Deepfake-Detection/
 ├── .env.example                               # Environment template for LLM configuration
-├── .gitignore                                 # Git exclusions for datasets, weights, caches, and logs
-├── README.md                                  # Comprehensive project documentation
+├── .gitignore                                 # Exclusions for datasets, weights, caches, and raw logs
+├── LICENSE                                    # MIT License
+├── README.md                                  # Primary project overview and instructions
 ├── requirements.txt                           # Pinned Python package dependencies
 │
 ├── agent/                                     # Agentic Forensic Reasoning Engine
@@ -158,7 +159,7 @@ Agentic-Multimodal-Deepfake-Detection/
 │   ├── report_generator.py                    # Markdown and structured report generator
 │   └── structured_evidence.py                 # Forensic evidence schema definitions
 │
-├── app/                                       # FastAPI Web Application & Interface
+├── app/                                       # FastAPI Web Application & Dashboard
 │   ├── config.py                              # Application configuration & thresholds
 │   ├── demo_service.py                        # Pre-indexed benchmark and OOD demo catalog
 │   ├── inference_service.py                   # Singleton 6-encoder inference runner
@@ -166,10 +167,7 @@ Agentic-Multimodal-Deepfake-Detection/
 │   ├── main.py                                # FastAPI app and REST route definitions
 │   ├── video_processor.py                     # Video frame extraction and audio ingestion
 │   ├── temp_uploads/                          # Temporary upload staging (excluded from git)
-│   └── static/                                # Frontend UI assets
-│       ├── index.html                         # Interactive forensic dashboard UI
-│       ├── css/styles.css                     # Dark-mode responsive styling
-│       └── js/app.js                          # Client-side dynamic interaction controller
+│   └── static/                                # Frontend UI assets (HTML, CSS, JS)
 │
 ├── models/                                    # Neural Network Architecture Definitions
 │   ├── adaptive_fusion.py                     # Dynamic modality gating & missing-audio bypass
@@ -198,7 +196,7 @@ Agentic-Multimodal-Deepfake-Detection/
 │   ├── config.py                              # Preprocessing configurations
 │   └── utils.py                               # Image and audio preprocessing utilities
 │
-├── training/                                  # Model Training and Evaluation
+├── training/                                  # Model Training and Evaluation Modules
 │   ├── dataloader.py                          # Multimodal PyTorch DataLoaders
 │   ├── dataset.py                             # Audio-Visual dataset implementation
 │   ├── evaluate.py                            # Evaluation metrics computation
@@ -208,31 +206,39 @@ Agentic-Multimodal-Deepfake-Detection/
 │
 ├── tests/                                     # Automated Test Suite
 │   ├── test_application.py                    # End-to-end API, pipeline & fallback tests
-│   └── test_llm_agent.py                      # Forensic agent reasoning unit tests
+│   ├── test_llm_agent.py                      # Forensic agent reasoning unit tests
+│   ├── smoke_test_model.py                    # Forward pass architecture smoke test
+│   └── smoke_test_loss.py                     # Composite loss calculation smoke test
 │
-├── docs/                                      # Supplementary Technical Documentation
-│   ├── agent_architecture.md                  # Forensic reasoning agent specification
+├── tools/                                     # Developer & Forensic Diagnostic Utilities
+│   ├── audit_inference_investigation.py       # Deep-dive 6-encoder and label diagnostic audit
+│   ├── audit_test_set.py                      # Test set feature evaluation with Fast3V3FusionModel
+│   ├── compare_offline_vs_web.py              # Live vs offline precomputed feature comparator
+│   ├── debug_inference_pipeline.py            # CLI video pipeline inspection diagnostic
+│   ├── discover_experiments.py                # Multi-experiment metric discovery aggregator
+│   ├── repair_spectrogram_cache.py            # Numerical stability spectrogram repair utility
+│   ├── test_fusion_pipeline_diagnostics.py    # Gated fusion backward/gradient checker
+│   └── verify_3v3_cached_features.py          # Feature tensor NaN/Inf audit utility
+│
+├── docs/                                      # Consolidated Project Documentation
+│   ├── architecture.md                        # Detailed architecture, tensor shapes & equations
+│   ├── experiments.md                         # Benchmark metrics, ablations & run guide
+│   ├── limitations.md                         # Edge cases, OOD diagnostics & ethical scope
+│   ├── references.md                          # Academic bibliography & module citations
 │   ├── api_documentation.md                   # REST API endpoint reference
-│   ├── application_architecture.md            # Full-stack architectural breakdown
-│   └── demo_walkthrough.md                    # User guide and demonstration walkthrough
+│   ├── demo_walkthrough.md                    # User guide and demonstration walkthrough
+│   ├── final_report_summary.md                # Comprehensive final-year project summary
+│   └── research_evidence/                     # Complete empirical research notes and tables
 │
-├── experiments/                               # Experiment Runner Scripts & Reports
+├── experiments/                               # Experiment Runner Scripts & Results
 │   └── phase8/                                # Phase 8 Calibration & OOD Reliability
 │       ├── calibration/calibration_model.json # Temperature scaling calibration parameters
-│       ├── ood/reference_stats.pt             # In-distribution validation feature centroids (10 KB)
+│       ├── ood/reference_stats.pt             # In-distribution validation feature centroids
 │       └── ood/reliability_detector.py        # OOD & Reliability classifier module
-│
-├── RESEARCH_EVIDENCE_PACKAGE/                 # Comprehensive Empirical Research Records
-│   ├── 00_MASTER_RESEARCH_SUMMARY.md          # Complete project research findings
-│   ├── 02_FINAL_ARCHITECTURE.md               # Detailed equations and tensor flows
-│   ├── 06_FINAL_RESULTS.md                    # Benchmark performance metrics
-│   ├── 08_MISSING_AUDIO_ANALYSIS.md           # Empirical evaluation of missing audio
-│   └── tables/                                # Tabular experimental CSV results
 │
 ├── run_phase5_full_3v3_experiment.py          # Phase 5 full 3v3 training orchestration
 ├── run_phase6_forensic_analysis.py            # Phase 6 AV consistency & dubbed evaluation
-├── run_final_project_validation.py            # Final end-to-end project validation script
-└── PROJECT_SUMMARY_FOR_FINAL_REPORT.md        # Comprehensive report summary
+└── run_final_project_validation.py            # Final end-to-end project validation script
 ```
 
 ---
@@ -248,8 +254,8 @@ Agentic-Multimodal-Deepfake-Detection/
 
 ```bash
 # Clone the repository
-git clone https://github.com/karthiKeyanMP267/Projectwork1.git
-cd Projectwork1
+git clone https://github.com/karthiKeyanMP267/Deepfake_Detection.git
+cd Deepfake_Detection
 
 # Create and activate a virtual environment
 python -m venv venv
@@ -377,17 +383,20 @@ python -m unittest tests/test_application.py
 
 ## 14. Key Benchmark Results
 
-From the identity-disjoint test set evaluation on FakeAVCeleb v1.2:
+Evaluated on the standardized identity-disjoint test set ($N = 604$ videos) on FakeAVCeleb v1.2:
 
-| Metric | Baseline (2-Encoder) | Proposed Model (6-Encoder Full 3v3) | Relative Improvement |
+| Metric | Baseline (2-Encoder) | Proposed Champion (6-Encoder Full 3V3) | Net Improvement |
 | :--- | :---: | :---: | :---: |
-| **Accuracy** | 91.2% | **98.7%** | +7.5% |
-| **F1 Score** | 0.908 | **0.987** | +0.079 |
-| **ROC-AUC** | 0.941 | **0.998** | +0.057 |
-| **AV Consistency ($\tau = 0.1177$)** | N/A | **93.4% Dubbed Detection** | Novel Capability |
-| **Missing Audio Fallback Accuracy** | Fails (NaN) | **96.8% (Vision Fallback)** | Robust Handling |
+| **Accuracy** | 73.18% | **97.52%** | **+24.34%** |
+| **F1 Score** | 0.8451 | **0.9871** | **+0.1420** |
+| **ROC-AUC** | 0.6021 | **0.9902** | **+0.3881** |
+| **Balanced Accuracy** | 50.00% | **93.63%** | **+43.63%** |
+| **Authentic Class F1** | 10.00% | **69.39%** | **+59.39%** |
+| **Manipulated Class Recall** | 98.63% | **97.78%** | High sensitivity |
+| **AV Consistency Separation ($\tau = 0.1177$)** | N/A | **93.4% Dubbed Detection** | Novel Capability |
+| **Missing Audio Fallback Accuracy** | Fails (NaN) | **97.68% (Vision Fallback)** | Non-crashing bypass |
 
-*Detailed experiment logs, confusion matrices, and ablation tables are available in [RESEARCH_EVIDENCE_PACKAGE/](RESEARCH_EVIDENCE_PACKAGE/).*
+*For complete experimental breakdowns, confusion matrices, ablation histories, and mathematical formulations, see [docs/experiments.md](docs/experiments.md) and [docs/architecture.md](docs/architecture.md).*
 
 ---
 
@@ -396,6 +405,7 @@ From the identity-disjoint test set evaluation on FakeAVCeleb v1.2:
 ### Generalization & Out-of-Distribution (OOD) Data
 The model was trained on FakeAVCeleb v1.2. Videos originating from heavily compressed social media feeds, screen recordings, non-standard aspect ratios, or unconventional lighting conditions may exhibit distribution shift.
 - The included **OOD Reliability Detector** (`experiments/phase8/ood/reliability_detector.py`) checks input quality and flags low-reliability assessments with appropriate cautionary warnings.
+- For detailed technical analysis of known failure modes and domain shift, see [docs/limitations.md](docs/limitations.md).
 
 ### Forensic Evidentiary Notice
 This tool is intended as a **decision-support instrument** for researchers, journalists, and forensic analysts. It should not be used as the sole determinant in legal or punitive decisions without human-in-the-loop verification.
@@ -412,6 +422,6 @@ This project is licensed under the [MIT License](LICENSE).
   author={Karthikeyan, M. P.},
   year={2026},
   journal={GitHub Repository},
-  url={https://github.com/karthiKeyanMP267/Projectwork1}
+  url={https://github.com/karthiKeyanMP267/Deepfake_Detection}
 }
 ```
