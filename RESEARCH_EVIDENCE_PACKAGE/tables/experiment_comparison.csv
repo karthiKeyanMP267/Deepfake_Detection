@@ -1,0 +1,7 @@
+Phase,Architecture,Trainable Strategy,Accuracy,Precision,Recall,F1,ROC-AUC,Balanced Accuracy,Real F1,Fake F1
+Baseline,1V1 (EfficientNet + Whisper),Full Freeze (Fusion Trained),7.04%,100.00%,4.83%,9.22%,68.65%,N/A,4.75%,9.22%
+Class Weighting,1V1 (EfficientNet + Whisper),Weighted CE Loss (No Sampler),97.68%,97.68%,100.00%,98.83%,68.40%,N/A,0.00%,98.83%
+Weighted Sampler,1V1 (EfficientNet + Whisper),WeightedRandomSampler + Focal Loss,74.91%,98.88%,75.16%,85.40%,70.10%,N/A,10.62%,85.40%
+Phase 3 Video Swin,2V1A (EfficientNet + Video Swin + Whisper),Full Freeze (Fusion Trained),97.52%,99.48%,97.95%,98.71%,98.80%,91.08%,68.97%,98.71%
+Phase 4 Partial Fine-Tuning,2V1A (EfficientNet + Video Swin + Whisper),Partial Backbone Unfreeze (Group LR),97.52%,99.65%,97.78%,98.71%,98.25%,93.63%,69.39%,98.71%
+Phase 5 Full 3V3,3V3 (EffNet + Swin + ResNet18 + Whisper + W2V2 + SpecCNN),Full Freeze (6-Encoder Aggregation + Fusion),97.52%,99.65%,97.78%,98.71%,99.02%,93.63%,69.39%,98.71%

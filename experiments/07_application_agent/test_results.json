@@ -1,0 +1,19 @@
+{
+    "total_tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "was_successful": true,
+    "duration_seconds": 5.217,
+    "test_cases": [
+        "test_api_health",
+        "test_model_singleton_loading",
+        "test_valid_video_with_audio_inference",
+        "test_missing_audio_fallback",
+        "test_silent_audio_handling",
+        "test_corrupted_audio_handling",
+        "test_corrupted_video_upload",
+        "test_invalid_file_upload",
+        "test_agent_evidence_generation",
+        "test_demo_catalog_and_evaluation"
+    ]
+}

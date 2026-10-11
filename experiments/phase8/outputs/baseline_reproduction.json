@@ -1,0 +1,21 @@
+{
+    "status": "PASSED",
+    "sample_count": 604,
+    "real_count": 19,
+    "fake_count": 585,
+    "accuracy": 0.9751655629139073,
+    "f1": 0.9870578084555651,
+    "precision": 0.9965156794425087,
+    "recall": 0.9777777777777777,
+    "roc_auc": 0.9902384165542061,
+    "balanced_accuracy": 0.9362573099415205,
+    "specificity": 0.8947368421052632,
+    "f1_real": 0.6938775510204082,
+    "f1_fake": 0.9870578084555651,
+    "confusion_matrix": {
+        "TN": 17,
+        "FP": 2,
+        "FN": 13,
+        "TP": 572
+    }
+}

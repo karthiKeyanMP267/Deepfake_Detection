@@ -1,0 +1,35 @@
+{
+    "train": {
+        "cache_path": "experiments/05_full_3v3/features/train_features.pt",
+        "samples": 11266,
+        "old_nan_count": 21760,
+        "new_nan_count": 0,
+        "spectrogram_shape": [
+            11266,
+            256
+        ],
+        "status": "REPAIRED_AND_VERIFIED_CLEAN"
+    },
+    "val": {
+        "cache_path": "experiments/05_full_3v3/features/val_features.pt",
+        "samples": 2414,
+        "old_nan_count": 3072,
+        "new_nan_count": 0,
+        "spectrogram_shape": [
+            2414,
+            256
+        ],
+        "status": "REPAIRED_AND_VERIFIED_CLEAN"
+    },
+    "test": {
+        "cache_path": "experiments/05_full_3v3/features/test_features.pt",
+        "samples": 604,
+        "old_nan_count": 768,
+        "new_nan_count": 0,
+        "spectrogram_shape": [
+            604,
+            256
+        ],
+        "status": "REPAIRED_AND_VERIFIED_CLEAN"
+    }
+}

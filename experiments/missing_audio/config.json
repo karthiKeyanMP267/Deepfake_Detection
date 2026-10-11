@@ -1,0 +1,10 @@
+{
+    "Supports Missing Audio": true,
+    "Vision Only Enabled": true,
+    "Audio Detector Enabled": true,
+    "Fusion Mode": "Adaptive (Multimodal / Vision-Only)",
+    "Checkpoint Loaded": true,
+    "Checkpoint Path": "experiments\\weighted_sampler\\models\\best_model.pth",
+    "Automated Tests Passed": true,
+    "Timestamp": "2026-07-30 15:28:50"
+}

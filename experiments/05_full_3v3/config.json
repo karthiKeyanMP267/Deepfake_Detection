@@ -1,0 +1,28 @@
+{
+    "Experiment Name": "05_full_3v3",
+    "Architecture": "Full 3-Vision + 3-Audio Multimodal (6 Models)",
+    "Vision Models": [
+        "EfficientNet-B0",
+        "VideoSwin-Tiny",
+        "FaceMouth-ResNet18"
+    ],
+    "Audio Models": [
+        "Whisper",
+        "Wav2Vec2",
+        "SpectrogramCNN"
+    ],
+    "Optimization": "Fast Feature Precomputation & Caching",
+    "Feature Extraction Batch Size": 8,
+    "Training Batch Size": 32,
+    "Max Epochs": 5,
+    "Early Stopping Patience": 2,
+    "Learning Rate": 0.0001,
+    "Weight Decay": 1e-05,
+    "Optimizer": "AdamW",
+    "Loss Function": "MultimodalLoss (Focal Loss + InfoNCE Contrastive)",
+    "Total Parameters": 166440678,
+    "Frozen Parameters": 157682658,
+    "Trainable Parameters": 8758020,
+    "Device": "cuda",
+    "Random Seed": 42
+}

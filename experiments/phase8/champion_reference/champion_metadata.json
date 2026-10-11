@@ -1,0 +1,54 @@
+{
+    "champion_model_name": "Full 3-Vision + 3-Audio Multimodal Deepfake Detector (3V3)",
+    "checkpoint_path": "experiments/05_full_3v3/models/best_model.pth",
+    "checkpoint_sha256": "A46C39996EF19F86D25E884209C37E50DB201A16E78B6CA0D8D1BD230934F92A",
+    "checkpoint_size_bytes": 763326482,
+    "checkpoint_last_modified_utc": "2026-08-24T14:34:56Z",
+    "training_epoch": 4,
+    "best_validation_f1": 0.9722,
+    "encoders": {
+        "vision": [
+            "EfficientNet-B0 (1280-D spatial texture)",
+            "Video Swin-Tiny (768-D spatio-temporal motion)",
+            "Face/Mouth ResNet-18 (512-D perioral articulation)"
+        ],
+        "audio": [
+            "Whisper-Base (512-D speech semantics)",
+            "Wav2Vec2-Base (768-D acoustic speech)",
+            "Spectrogram CNN (256-D log-Mel time-frequency)"
+        ]
+    },
+    "parameter_counts": {
+        "total": 166440678,
+        "frozen": 157682658,
+        "trainable": 8758020
+    },
+    "test_manifest_path": "experiments/03_vision_swin/same_test_comparison/test_manifest.csv",
+    "test_sample_count": 604,
+    "test_ground_truth_distribution": {
+        "Real (0)": 19,
+        "Fake (1)": 585
+    },
+    "verified_baseline_metrics": {
+        "accuracy": 0.9751655629139073,
+        "precision": 0.9965156794425087,
+        "recall": 0.9777777777777777,
+        "f1": 0.9870578084555651,
+        "roc_auc": 0.9902384165542061,
+        "balanced_accuracy": 0.9362573099415205,
+        "sensitivity": 0.9777777777777777,
+        "specificity": 0.8947368421052632,
+        "real_precision": 0.5666666666666667,
+        "real_recall": 0.8947368421052632,
+        "real_f1": 0.6938775510204082,
+        "fake_precision": 0.9965156794425087,
+        "fake_recall": 0.9777777777777777,
+        "fake_f1": 0.9870578084555651,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 13,
+            "TP": 572
+        }
+    }
+}

@@ -1,0 +1,68 @@
+[
+    {
+        "case_name": "External Screen Recording 1",
+        "filename": "video1_222131.mp4",
+        "verdict": "REAL",
+        "confidence": 0.9647,
+        "calibrated_confidence": 0.9848,
+        "reliability": "LOW",
+        "ood_status": "POSSIBLY OOD",
+        "video_metadata": {
+            "width": 1336,
+            "height": 688,
+            "resolution": "1336x688",
+            "aspect_ratio": 1.94,
+            "fps": 30.0,
+            "total_frames": 818,
+            "duration_sec": 27.27,
+            "codec": "h264",
+            "face_area_ratio": 0.0369,
+            "frame_sharpness": 302.01,
+            "audio_available": true
+        },
+        "audio_available": true,
+        "fusion_weights": {
+            "vision": 0.6133,
+            "audio": 0.3867
+        },
+        "av_consistency": 0.2419,
+        "ood_flags": [
+            "Representation distance (29.2) exceeds in-distribution 95th-percentile (27.9).",
+            "Small facial ROI (3.7% frame area) suppresses high-frequency spatial artifact detection."
+        ],
+        "summary_explanation": "The multimodal detector evaluated the media using its vision and audio branches. The visual branch, comprising EfficientNet\u2011B0, Video Swin Transformer, and Face/Mouth ResNet\u201118, found no high\u2011frequency blending artifacts, coherent temporal motion, and natural facial articulation. The audio branch, using Spectrogram CNN, Whisper, and Wav2Vec2, detected natural harmonic distribution, environmental reverberation, and speech cadence consistent with human vocalization. The audio\u2011visual consistency score of 0.2419 surpassed the synchronization threshold of 0.1177, confirming that the visual mouth movements and acoustic signals are aligned. Despite the high confidence in the REAL verdict, the system flagged the input as out\u2011of\u2011distribution: it is a screen\u2011captured desktop video with a non\u2011standard aspect ratio (1.94) and a very small facial ROI (3.7% of frame area), which limits the resolution of high\u2011frequency spatial artifacts. Consequently, the overall reliability is low, and investigators should treat the verdict with caution while considering the OOD characteristics."
+    },
+    {
+        "case_name": "External Screen Recording 2",
+        "filename": "video2_222513.mp4",
+        "verdict": "REAL",
+        "confidence": 0.98,
+        "calibrated_confidence": 0.9927,
+        "reliability": "LOW",
+        "ood_status": "POSSIBLY OOD",
+        "video_metadata": {
+            "width": 1324,
+            "height": 680,
+            "resolution": "1324x680",
+            "aspect_ratio": 1.95,
+            "fps": 30.0,
+            "total_frames": 801,
+            "duration_sec": 26.7,
+            "codec": "h264",
+            "face_area_ratio": 0.0587,
+            "frame_sharpness": 203.24,
+            "audio_available": true
+        },
+        "audio_available": true,
+        "fusion_weights": {
+            "vision": 0.5699,
+            "audio": 0.4301
+        },
+        "av_consistency": 0.1625,
+        "ood_flags": [
+            "Representation distance (29.4) exceeds in-distribution 95th-percentile (27.9).",
+            "Small facial ROI (5.9% frame area) suppresses high-frequency spatial artifact detection."
+        ],
+        "summary_explanation": "The multimodal detector evaluated the visual stream using EfficientNet\u2011B0, Video Swin Transformer, and Face/Mouth ResNet\u201118, all reporting natural facial texture, coherent frame\u2011to\u2011frame motion, and realistic mouth articulation. The audio stream, processed by Spectrogram CNN and Whisper + Wav2Vec2, revealed natural harmonic distribution, environmental reverberation, and consistent phonetic timbre, contributing 43.0% of the fusion attention weight. Cross\u2011modal analysis produced an AV consistency score of 0.1625, surpassing the 0.1177 threshold and confirming synchronization. Despite the strong evidence for authenticity, the system flagged the input as low reliability due to out\u2011of\u2011distribution characteristics: a screen\u2011captured desktop video with multi\u2011layer compression, a small facial ROI (5.9% of frame area), and a non\u2011standard aspect ratio (1.95). Consequently, while the verdict is REAL with high confidence, investigators should treat the result with caution and consider corroborating evidence."
+    }
+]

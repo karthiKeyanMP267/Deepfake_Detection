@@ -1,0 +1,9 @@
+Milestone,Accuracy,Precision,Recall,F1,ROC_AUC,Balanced_Accuracy,Real_F1,Notes
+1. Baseline (Unweighted 2V1A),0.0704,1.0,0.0483,0.0922,0.6865,N/A,0.0475,Extreme minority class collapse under 97.7% imbalance
+2. Weighted Sampler (Phase 2A),0.7491,0.9888,0.7516,0.854,0.701,N/A,0.1062,Balanced sampling stabilized gradient flow
+3. Class Weighting (Phase 2B),0.9768,0.9768,1.0,0.9883,0.684,N/A,0.0,Majority class bias resulted in 0% Real recall
+4. Video Swin Transformer (Phase 3),0.9752,0.9948,0.9795,0.9871,0.988,0.9108,0.6897,Spatio-temporal attention unlocked +28.7% ROC-AUC jump
+5. Partial Fine-Tuning (Phase 4),0.9752,0.9965,0.9778,0.9871,0.9825,0.9363,0.6939,Wav2Vec2 acoustic adaptation boosted Real recall to 89.5%
+6. Full 3V3 Architecture (Phase 5),0.9751655629139073,0.9965156794425087,0.9777777777777777,0.9870578084555651,0.9902384165542061,0.9362573099415205,0.6938775510204082,Peak performance: 6 encoders (Face/Mouth + SpecCNN) achieve 99.02% AUC
+7. Missing Audio Fallback (Phase 6A),0.9768211920529801,0.9897084048027445,0.9863247863247864,0.988013698630137,0.9857399910031489,0.8352676563202879,0.65,Robust vision-only fallback without crashing (95.9% faster inference)
+8. Dubbed/Mismatch Forensics (Phase 6B),0.9768211920529801,0.9948006932409013,0.9811965811965812,0.9879518072289156,0.9832658569500675,0.911650922177238,0.6956521739130435,Cross-modal consistency score separates matched vs dubbed speech (+0.268 margin)

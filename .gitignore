@@ -1,0 +1,117 @@
+# ==============================================================================
+# Git Ignore Configuration
+# Project: Agent-Assisted Multimodal Deepfake Detection via Cross-Modal Consistency Learning and Adaptive Fusion
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python, Bytecode & Build Artifacts
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+*.egg-info/
+
+# ------------------------------------------------------------------------------
+# 2. Virtual Environments
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 3. Environment Secrets & Private Credentials
+# ------------------------------------------------------------------------------
+.env
+*.env
+.env.local
+.env.*.local
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 4. Large Datasets & Processed Media
+# ------------------------------------------------------------------------------
+# Raw FakeAVCeleb dataset videos and audios (~6.3 GB)
+dataset/
+dataset/*
+
+# Processed frames, face crops, and audio clips
+processed/
+processed/*
+
+# InsightFace pre-trained models (~325 MB)
+.insightface/
+.insightface/*
+
+# ------------------------------------------------------------------------------
+# 5. Temporary Uploads & Media Files
+# ------------------------------------------------------------------------------
+app/temp_uploads/*
+!app/temp_uploads/.gitkeep
+
+# Exclude video, audio, and large media files across experiments
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.wav
+*.flac
+
+# ------------------------------------------------------------------------------
+# 6. Model Weights & Checkpoints (Excluded from Git; host via Git LFS / external)
+# ------------------------------------------------------------------------------
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Explicitly keep the tiny OOD reference stats (10 KB centroid file required for reliability detector)
+!experiments/phase8/ood/reference_stats.pt
+
+# Standalone checkpoints folders
+checkpoints/
+checkpoints_test/
+experiments/**/models/
+
+# ------------------------------------------------------------------------------
+# 7. Cached Features & Intermediate Tensors
+# ------------------------------------------------------------------------------
+experiments/**/features/
+*.npy
+
+# ------------------------------------------------------------------------------
+# 8. Generated Plots & Experimental Visualizations
+# ------------------------------------------------------------------------------
+*.png
+experiments/**/plots/
+experiments/**/visualizations/
+experiments/demo_debug/frames/
+experiments/demo_debug/videos/
+
+# ------------------------------------------------------------------------------
+# 9. Training Logs, Debug Runs & Raw Predictions
+# ------------------------------------------------------------------------------
+*.log
+experiments/**/logs/
+experiments/**/predictions/
+
+# ------------------------------------------------------------------------------
+# 10. Operating System & IDE Specific Files
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

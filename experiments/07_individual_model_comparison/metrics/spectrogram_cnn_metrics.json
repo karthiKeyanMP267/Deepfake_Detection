@@ -1,0 +1,26 @@
+{
+    "accuracy": 0.03145695364238411,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc": 0.30341880341880345,
+    "balanced_accuracy": 0.5,
+    "specificity": 1.0,
+    "sensitivity": 0.0,
+    "precision_real": 0.03145695364238411,
+    "recall_real": 1.0,
+    "f1_real": 0.060995184590690206,
+    "precision_fake": 0.0,
+    "recall_fake": 0.0,
+    "f1_fake": 0.0,
+    "TP": 0,
+    "TN": 19,
+    "FP": 0,
+    "FN": 585,
+    "confusion_matrix": {
+        "TN": 19,
+        "FP": 0,
+        "FN": 585,
+        "TP": 0
+    }
+}

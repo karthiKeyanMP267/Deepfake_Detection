@@ -1,0 +1,226 @@
+[
+    {
+        "condition": "1. Original / Clean Baseline",
+        "accuracy": 0.9751655629139073,
+        "f1": 0.9870578084555651,
+        "balanced_accuracy": 0.9362573099415205,
+        "roc_auc": 0.9902384165542061,
+        "f1_real": 0.6938775510204082,
+        "f1_fake": 0.9870578084555651,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 13,
+            "TP": 572
+        }
+    },
+    {
+        "condition": "2. Moderate Video Compression (H.264 CRF 28)",
+        "accuracy": 0.9751655629139073,
+        "f1": 0.9870801033591732,
+        "balanced_accuracy": 0.9107962213225371,
+        "roc_auc": 0.9882141250562304,
+        "f1_real": 0.6808510638297872,
+        "f1_fake": 0.9870801033591732,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 16,
+            "FP": 3,
+            "FN": 12,
+            "TP": 573
+        }
+    },
+    {
+        "condition": "3. Strong Video Compression (H.264 CRF 36)",
+        "accuracy": 0.9784768211920529,
+        "f1": 0.9888220120378332,
+        "balanced_accuracy": 0.9125056230319388,
+        "roc_auc": 0.989293747188484,
+        "f1_real": 0.7111111111111111,
+        "f1_fake": 0.9888220120378332,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 16,
+            "FP": 3,
+            "FN": 10,
+            "TP": 575
+        }
+    },
+    {
+        "condition": "4. Video Resizing / Downsampling (Low-Res Upscale)",
+        "accuracy": 0.9784768211920529,
+        "f1": 0.9888027562446167,
+        "balanced_accuracy": 0.9379667116509222,
+        "roc_auc": 0.9896986054880792,
+        "f1_real": 0.723404255319149,
+        "f1_fake": 0.9888027562446167,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 11,
+            "TP": 574
+        }
+    },
+    {
+        "condition": "5. Mild Spatial Blur (Gaussian Defocus)",
+        "accuracy": 0.9552980132450332,
+        "f1": 0.9764192139737992,
+        "balanced_accuracy": 0.9514619883040936,
+        "roc_auc": 0.9905982905982907,
+        "f1_real": 0.5714285714285714,
+        "f1_fake": 0.9764192139737992,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 18,
+            "FP": 1,
+            "FN": 26,
+            "TP": 559
+        }
+    },
+    {
+        "condition": "6. Mild Video Additive Noise (Sensor Noise)",
+        "accuracy": 0.9718543046357616,
+        "f1": 0.9853068280034573,
+        "balanced_accuracy": 0.9345479082321188,
+        "roc_auc": 0.9877642825011247,
+        "f1_real": 0.6666666666666666,
+        "f1_fake": 0.9853068280034573,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 15,
+            "TP": 570
+        }
+    },
+    {
+        "condition": "7. Brightness Variation (+15% Exposure)",
+        "accuracy": 0.9718543046357616,
+        "f1": 0.9852813852813853,
+        "balanced_accuracy": 0.9600089968511021,
+        "roc_auc": 0.9901484480431849,
+        "f1_real": 0.6792452830188679,
+        "f1_fake": 0.9852813852813853,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 18,
+            "FP": 1,
+            "FN": 16,
+            "TP": 569
+        }
+    },
+    {
+        "condition": "8. Contrast Variation (0.75x Dynamic Range)",
+        "accuracy": 0.9801324503311258,
+        "f1": 0.9896729776247849,
+        "balanced_accuracy": 0.938821412505623,
+        "roc_auc": 0.9906882591093118,
+        "f1_real": 0.7391304347826086,
+        "f1_fake": 0.9896729776247849,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 10,
+            "TP": 575
+        }
+    },
+    {
+        "condition": "9. Frame-Rate Variation (Decimation to 15 fps)",
+        "accuracy": 0.9768211920529801,
+        "f1": 0.9879310344827587,
+        "balanced_accuracy": 0.9371120107962213,
+        "roc_auc": 0.990463337831759,
+        "f1_real": 0.7083333333333334,
+        "f1_fake": 0.9879310344827587,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 12,
+            "TP": 573
+        }
+    },
+    {
+        "condition": "10. Audio Resampling (8 kHz Telephony Bandwidth)",
+        "accuracy": 0.9735099337748344,
+        "f1": 0.9861830742659758,
+        "balanced_accuracy": 0.9354026090868196,
+        "roc_auc": 0.9903283850652271,
+        "f1_real": 0.68,
+        "f1_fake": 0.9861830742659758,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 14,
+            "TP": 571
+        }
+    },
+    {
+        "condition": "11. Mild Background Acoustic Noise (SNR 15 dB)",
+        "accuracy": 0.9751655629139073,
+        "f1": 0.9870578084555651,
+        "balanced_accuracy": 0.9362573099415205,
+        "roc_auc": 0.9901934322986955,
+        "f1_real": 0.6938775510204082,
+        "f1_fake": 0.9870578084555651,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 13,
+            "TP": 572
+        }
+    },
+    {
+        "condition": "12. Audio Volume Variation (-4.4 dB Attenuation)",
+        "accuracy": 0.9701986754966887,
+        "f1": 0.9844290657439446,
+        "balanced_accuracy": 0.9336932073774179,
+        "roc_auc": 0.9904183535762483,
+        "f1_real": 0.6538461538461539,
+        "f1_fake": 0.9844290657439446,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 16,
+            "TP": 569
+        }
+    },
+    {
+        "condition": "13. Mild Audio Compression (Opus 16kbps)",
+        "accuracy": 0.9751655629139073,
+        "f1": 0.9870578084555651,
+        "balanced_accuracy": 0.9362573099415205,
+        "roc_auc": 0.9902384165542061,
+        "f1_real": 0.6938775510204082,
+        "f1_fake": 0.9870578084555651,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 13,
+            "TP": 572
+        }
+    },
+    {
+        "condition": "14. Reverberation / Room Reflection Smearing",
+        "accuracy": 0.9735099337748344,
+        "f1": 0.9861830742659758,
+        "balanced_accuracy": 0.9354026090868196,
+        "roc_auc": 0.9886189833558255,
+        "f1_real": 0.68,
+        "f1_fake": 0.9861830742659758,
+        "invalid_samples": 0,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 14,
+            "TP": 571
+        }
+    }
+]

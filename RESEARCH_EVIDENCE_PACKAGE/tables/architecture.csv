@@ -1,0 +1,15 @@
+Component,Model,Input Dimension,Output Dimension,Frozen/Trainable,Parameter Count
+Vision Encoder 1,EfficientNet-B0,"(B, 16, 3, 224, 224)","(B, 1280)",Frozen,"4,007,548"
+Vision Encoder 2,Video Swin Transformer (Swin3D-T),"(B, 16, 3, 224, 224)","(B, 768)",Frozen,"27,850,470"
+Vision Encoder 3,Face/Mouth ResNet-18,"(B, 16, 3, 224, 224)","(B, 512)",Frozen,"11,176,512"
+Vision Aggregator,Linear Layer (Concatenation),"(B, 2560)","(B, 1280)",Trainable,"5,900,800"
+Vision Projection Head,MLP + BatchNorm + L2Norm,"(B, 1280)","(B, 256)",Trainable,"788,224"
+Audio Encoder 4,Whisper (Base.en),"(B, 160000) -> Log-Mel","(B, 512)",Frozen,"19,822,592"
+Audio Encoder 5,Wav2Vec2 (Base),"(B, 160000) @ 16kHz","(B, 768)",Frozen,"94,370,944"
+Audio Encoder 6,Spectrogram 2D CNN,"(B, 160000) -> STFT Mel","(B, 256)",Trainable (Newly Init),"454,592"
+Audio Aggregator,Linear Layer (Concatenation),"(B, 1536)","(B, 512)",Trainable,"1,442,816"
+Audio Projection Head,MLP + BatchNorm + L2Norm,"(B, 512)","(B, 256)",Trainable,"395,008"
+Adaptive Fusion,Attention Network (Softmax),"(B, 256) x 2","(B, 512)",Trainable,"65,922"
+Deepfake Classifier,2-Layer MLP + BatchNorm + Dropout,"(B, 512)","(B, 2)",Trainable,"165,250"
+Contrastive Loss,Cross-Modal InfoNCE (Tau=0.07),"(B, 256) x 2",Scalar Loss,Non-Parametric,0
+TOTAL (Full 3V3),6 Foundation Encoders + Fusion,--,--,9.21M Trainable / 157.23M Frozen,"166,440,678"

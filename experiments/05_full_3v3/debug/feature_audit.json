@@ -1,0 +1,479 @@
+{
+    "train": {
+        "file": "experiments/05_full_3v3/features/train_features.pt",
+        "keys": [
+            "sample_ids",
+            "labels",
+            "audio_available",
+            "efficientnet_features",
+            "video_swin_features",
+            "face_mouth_features",
+            "whisper_features",
+            "wav2vec2_features",
+            "spectrogram_features"
+        ],
+        "features": {
+            "efficientnet_features": {
+                "name": "efficientnet_features",
+                "shape": [
+                    11266,
+                    1280
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 14420480,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.260009765625,
+                "max": 4.10546875,
+                "mean": 0.09069588780403137,
+                "std": 0.3246433138847351
+            },
+            "video_swin_features": {
+                "name": "video_swin_features",
+                "shape": [
+                    11266,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 8652288,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -1.5518826246261597,
+                "max": 1.618257761001587,
+                "mean": 0.0033216425217688084,
+                "std": 0.2581811547279358
+            },
+            "face_mouth_features": {
+                "name": "face_mouth_features",
+                "shape": [
+                    11266,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 5768192,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 8.46875,
+                "mean": 0.48737406730651855,
+                "std": 0.6292464733123779
+            },
+            "whisper_features": {
+                "name": "whisper_features",
+                "shape": [
+                    11266,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 5768192,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -18.890625,
+                "max": 4.36328125,
+                "mean": -0.019003136083483696,
+                "std": 0.9275216460227966
+            },
+            "wav2vec2_features": {
+                "name": "wav2vec2_features",
+                "shape": [
+                    11266,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 8652288,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -3.195222854614258,
+                "max": 2.89082670211792,
+                "mean": -0.0017977054230868816,
+                "std": 0.23990367352962494
+            },
+            "spectrogram_features": {
+                "name": "spectrogram_features",
+                "shape": [
+                    11266,
+                    256
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 2884096,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.4217905104160309,
+                "max": 0.4515281617641449,
+                "mean": 0.014378744177520275,
+                "std": 0.1366836130619049
+            },
+            "labels": {
+                "name": "labels",
+                "shape": [
+                    11266
+                ],
+                "dtype": "torch.int64",
+                "total_elements": 11266,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9770104885101318,
+                "std": 0.14987662434577942
+            },
+            "audio_available": {
+                "name": "audio_available",
+                "shape": [
+                    11266
+                ],
+                "dtype": "torch.bool",
+                "total_elements": 11266,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0,
+                "std": 0.0
+            }
+        },
+        "sample_ids_count": 11266
+    },
+    "val": {
+        "file": "experiments/05_full_3v3/features/val_features.pt",
+        "keys": [
+            "sample_ids",
+            "labels",
+            "audio_available",
+            "efficientnet_features",
+            "video_swin_features",
+            "face_mouth_features",
+            "whisper_features",
+            "wav2vec2_features",
+            "spectrogram_features"
+        ],
+        "features": {
+            "efficientnet_features": {
+                "name": "efficientnet_features",
+                "shape": [
+                    2414,
+                    1280
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 3089920,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.2578125,
+                "max": 4.34765625,
+                "mean": 0.09082268923521042,
+                "std": 0.32409900426864624
+            },
+            "video_swin_features": {
+                "name": "video_swin_features",
+                "shape": [
+                    2414,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 1853952,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -1.4377720355987549,
+                "max": 1.4363863468170166,
+                "mean": 0.003329397412016988,
+                "std": 0.2585016191005707
+            },
+            "face_mouth_features": {
+                "name": "face_mouth_features",
+                "shape": [
+                    2414,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 1235968,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 8.4609375,
+                "mean": 0.48724791407585144,
+                "std": 0.6290846467018127
+            },
+            "whisper_features": {
+                "name": "whisper_features",
+                "shape": [
+                    2414,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 1235968,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -18.890625,
+                "max": 4.3203125,
+                "mean": -0.01897060126066208,
+                "std": 0.9277041554450989
+            },
+            "wav2vec2_features": {
+                "name": "wav2vec2_features",
+                "shape": [
+                    2414,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 1853952,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -3.195222854614258,
+                "max": 2.89082670211792,
+                "mean": -0.0017806568648666143,
+                "std": 0.23989994823932648
+            },
+            "spectrogram_features": {
+                "name": "spectrogram_features",
+                "shape": [
+                    2414,
+                    256
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 617984,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.5720193386077881,
+                "max": 0.5060842037200928,
+                "mean": 0.006606099661439657,
+                "std": 0.15592500567436218
+            },
+            "labels": {
+                "name": "labels",
+                "shape": [
+                    2414
+                ],
+                "dtype": "torch.int64",
+                "total_elements": 2414,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9772162437438965,
+                "std": 0.14924439787864685
+            },
+            "audio_available": {
+                "name": "audio_available",
+                "shape": [
+                    2414
+                ],
+                "dtype": "torch.bool",
+                "total_elements": 2414,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0,
+                "std": 0.0
+            }
+        },
+        "sample_ids_count": 2414
+    },
+    "test": {
+        "file": "experiments/05_full_3v3/features/test_features.pt",
+        "keys": [
+            "sample_ids",
+            "labels",
+            "audio_available",
+            "efficientnet_features",
+            "video_swin_features",
+            "face_mouth_features",
+            "whisper_features",
+            "wav2vec2_features",
+            "spectrogram_features"
+        ],
+        "features": {
+            "efficientnet_features": {
+                "name": "efficientnet_features",
+                "shape": [
+                    604,
+                    1280
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 773120,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.2509765625,
+                "max": 3.9765625,
+                "mean": 0.09188280999660492,
+                "std": 0.3249015808105469
+            },
+            "video_swin_features": {
+                "name": "video_swin_features",
+                "shape": [
+                    604,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 463872,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -1.540754795074463,
+                "max": 1.4464538097381592,
+                "mean": 0.0033148471266031265,
+                "std": 0.25824254751205444
+            },
+            "face_mouth_features": {
+                "name": "face_mouth_features",
+                "shape": [
+                    604,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 309248,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 7.47265625,
+                "mean": 0.4897204339504242,
+                "std": 0.6314749717712402
+            },
+            "whisper_features": {
+                "name": "whisper_features",
+                "shape": [
+                    604,
+                    512
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 309248,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -18.890625,
+                "max": 4.14453125,
+                "mean": -0.01890159212052822,
+                "std": 0.9262726902961731
+            },
+            "wav2vec2_features": {
+                "name": "wav2vec2_features",
+                "shape": [
+                    604,
+                    768
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 463872,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -3.075618028640747,
+                "max": 2.1885247230529785,
+                "mean": -0.001811687950976193,
+                "std": 0.2390642911195755
+            },
+            "spectrogram_features": {
+                "name": "spectrogram_features",
+                "shape": [
+                    604,
+                    256
+                ],
+                "dtype": "torch.float32",
+                "total_elements": 154624,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": -0.6258590221405029,
+                "max": 0.6967629790306091,
+                "mean": 0.005085029173642397,
+                "std": 0.21392777562141418
+            },
+            "labels": {
+                "name": "labels",
+                "shape": [
+                    604
+                ],
+                "dtype": "torch.int64",
+                "total_elements": 604,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9685430526733398,
+                "std": 0.17469385266304016
+            },
+            "audio_available": {
+                "name": "audio_available",
+                "shape": [
+                    604
+                ],
+                "dtype": "torch.bool",
+                "total_elements": 604,
+                "nan_count": 0,
+                "pos_inf_count": 0,
+                "neg_inf_count": 0,
+                "invalid_count": 0,
+                "invalid_percent": 0.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0,
+                "std": 0.0
+            }
+        },
+        "sample_ids_count": 604
+    }
+}

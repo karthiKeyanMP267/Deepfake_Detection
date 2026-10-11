@@ -1,0 +1,89 @@
+#########################################################
+# Agent-Assisted Multimodal Deepfake Detection
+#########################################################
+
+# ==========================
+# Core
+# ==========================
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+
+# ==========================
+# Deep Learning
+# ==========================
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+
+# ==========================
+# Computer Vision
+# ==========================
+opencv-python==4.10.0.84
+Pillow==10.4.0
+
+# ==========================
+# Face Detection
+# ==========================
+retina-face==0.0.17
+tensorflow==2.16.1
+
+# ==========================
+# Audio Processing
+# ==========================
+librosa==0.10.2.post1
+soundfile==0.12.1
+
+# ==========================
+# Audio & Speech Encoders
+# ==========================
+openai-whisper==20240930
+
+# ==========================
+# Vision Encoders
+# ==========================
+timm==1.0.8
+
+# ==========================
+# Machine Learning
+# ==========================
+scikit-learn==1.5.1
+
+# ==========================
+# Web Application & API
+# ==========================
+fastapi==0.110.0
+uvicorn==0.29.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+requests==2.32.3
+onnxruntime==1.23.2
+
+# ==========================
+# Utilities & Progress
+# ==========================
+tqdm==4.66.5
+PyYAML==6.0.2
+
+# ==========================
+# Plotting & Visualization
+# ==========================
+matplotlib>=3.9.1
+plotly==5.23.0
+
+# ==========================
+# Agentic Explanations
+# ==========================
+langchain==0.3.7
+langchain-community==0.3.7
+
+# ==========================
+# Optional LLM Integration
+# ==========================
+openai>=1.40.0
+
+# ==========================
+# Interactive Notebooks
+# ==========================
+jupyter
+ipykernel

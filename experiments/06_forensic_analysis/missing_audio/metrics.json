@@ -1,0 +1,59 @@
+{
+    "normal_multimodal": {
+        "accuracy": 0.9751655629139073,
+        "precision": 0.9965156794425087,
+        "recall": 0.9777777777777777,
+        "f1": 0.9870578084555651,
+        "auc": 0.9902384165542061,
+        "balanced_accuracy": 0.9362573099415205,
+        "sensitivity": 0.9777777777777777,
+        "specificity": 0.8947368421052632,
+        "precision_real": 0.5666666666666667,
+        "recall_real": 0.8947368421052632,
+        "f1_real": 0.6938775510204082,
+        "precision_fake": 0.9965156794425087,
+        "recall_fake": 0.9777777777777777,
+        "f1_fake": 0.9870578084555651,
+        "confusion_matrix": {
+            "TN": 17,
+            "FP": 2,
+            "FN": 13,
+            "TP": 572
+        }
+    },
+    "vision_only_fallback": {
+        "accuracy": 0.9768211920529801,
+        "precision": 0.9897084048027445,
+        "recall": 0.9863247863247864,
+        "f1": 0.988013698630137,
+        "auc": 0.9857399910031489,
+        "balanced_accuracy": 0.8352676563202879,
+        "sensitivity": 0.9863247863247864,
+        "specificity": 0.6842105263157895,
+        "precision_real": 0.6190476190476191,
+        "recall_real": 0.6842105263157895,
+        "f1_real": 0.65,
+        "precision_fake": 0.9897084048027445,
+        "recall_fake": 0.9863247863247864,
+        "f1_fake": 0.988013698630137,
+        "confusion_matrix": {
+            "TN": 13,
+            "FP": 6,
+            "FN": 8,
+            "TP": 577
+        }
+    },
+    "absolute_difference": {
+        "accuracy": 0.0016556291390728006,
+        "f1": 0.0009558901745718718,
+        "auc": -0.0044984255510571725,
+        "balanced_accuracy": -0.10098965362123258,
+        "real_f1": -0.043877551020408134,
+        "fake_f1": 0.0009558901745718718
+    },
+    "timing": {
+        "normal_multimodal_ms_per_sample": 0.2,
+        "vision_only_ms_per_sample": 0.008,
+        "speedup_percent": 95.94
+    }
+}

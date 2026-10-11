@@ -1,0 +1,12 @@
+Metric,Weighted Sampler Baseline,Phase 3 Video Swin,Phase 5 Full 3V3,Absolute Gain (Phase 3 vs Baseline),Absolute Gain (Phase 5 vs Baseline)
+Test Sample Population,604 samples,604 samples,604 samples,Identical Population,Identical Population
+Accuracy,73.18%,97.52%,97.52%,+24.34% pp,+24.34% pp
+Precision,97.74%,99.48%,99.65%,+1.74% pp,+1.91% pp
+Recall (Sensitivity),74.02%,97.95%,97.78%,+23.93% pp,+23.76% pp
+F1-Score,84.24%,98.71%,98.71%,+14.47% pp,+14.47% pp
+ROC-AUC,59.99%,98.80%,99.02%,+38.81% pp,+39.03% pp
+Balanced Accuracy,60.69%,91.08%,93.63%,+30.39% pp,+32.94% pp
+Specificity (Real Recall),47.37%,84.21%,89.47%,+36.84% pp,+42.10% pp
+Real F1-Score,10.00%,68.09%,69.39%,+58.09% pp,+59.39% pp
+Fake F1-Score,84.24%,98.71%,98.71%,+14.47% pp,+14.47% pp
+"Confusion Matrix (TN, FP, FN, TP)","[9, 10, 152, 433]","[16, 3, 12, 573]","[17, 2, 13, 572]",-140 False Negatives,"-139 False Negatives, -8 False Positives"

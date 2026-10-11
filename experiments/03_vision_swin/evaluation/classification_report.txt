@@ -1,0 +1,14 @@
+Phase-3 Video Swin Evaluation Report on Test Set
+===============================================
+
+              precision    recall  f1-score   support
+
+        Real     0.5833    0.8421    0.6897        19
+        Fake     0.9948    0.9795    0.9871       585
+
+    accuracy                         0.9752       604
+   macro avg     0.7891    0.9108    0.8384       604
+weighted avg     0.9818    0.9752    0.9777       604
+
+Balanced Accuracy: 0.9108
+ROC-AUC          : 0.9880

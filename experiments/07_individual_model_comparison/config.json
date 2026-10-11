@@ -1,0 +1,101 @@
+{
+    "experiment_name": "07_individual_model_comparison",
+    "description": "Frozen-Backbone Standalone Evaluation with Lightweight Classification Heads",
+    "seed": 42,
+    "device": "cuda",
+    "test_samples_count": 604,
+    "classification_head": "Linear(dim, 256) -> ReLU -> Dropout(0.3) -> Linear(256, 2)",
+    "training": {
+        "max_epochs": 10,
+        "patience": 3,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "sampler": "WeightedRandomSampler (training only)",
+        "fixed_threshold": 0.5
+    },
+    "models": [
+        {
+            "key": "efficientnet",
+            "name": "EfficientNet-B0",
+            "dim": 1280,
+            "modality": "Visual (Spatial)"
+        },
+        {
+            "key": "video_swin",
+            "name": "Video Swin-Tiny",
+            "dim": 768,
+            "modality": "Visual (Spatio-Temporal)"
+        },
+        {
+            "key": "face_mouth_resnet",
+            "name": "Face/Mouth ResNet-18",
+            "dim": 512,
+            "modality": "Visual (Face/Mouth ROI)"
+        },
+        {
+            "key": "whisper",
+            "name": "Whisper Base",
+            "dim": 512,
+            "modality": "Audio (Semantic Speech)"
+        },
+        {
+            "key": "wav2vec2",
+            "name": "Wav2Vec2 Base",
+            "dim": 768,
+            "modality": "Audio (Acoustic Speech)"
+        },
+        {
+            "key": "spectrogram_cnn",
+            "name": "Spectrogram CNN",
+            "dim": 256,
+            "modality": "Audio (Time-Frequency)"
+        }
+    ],
+    "freezing_verification": {
+        "efficientnet": {
+            "total_encoder_params": 4007548,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 4007548,
+            "trainable_head_params": 328450
+        },
+        "video_swin": {
+            "total_encoder_params": 27850470,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 27850470,
+            "trainable_head_params": 197378
+        },
+        "face_mouth_resnet": {
+            "total_encoder_params": 11176512,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 11176512,
+            "trainable_head_params": 131842
+        },
+        "whisper": {
+            "total_encoder_params": 19822592,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 19822592,
+            "trainable_head_params": 131842
+        },
+        "wav2vec2": {
+            "total_encoder_params": 94370944,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 94370944,
+            "trainable_head_params": 197378
+        },
+        "spectrogram_cnn": {
+            "total_encoder_params": 454592,
+            "trainable_encoder_params": 0,
+            "frozen_encoder_params": 454592,
+            "trainable_head_params": 66306
+        }
+    },
+    "training_times": {
+        "efficientnet": 20.989684104919434,
+        "video_swin": 22.76503872871399,
+        "face_mouth_resnet": 12.767620325088501,
+        "whisper": 13.292790651321411,
+        "wav2vec2": 9.175951957702637,
+        "spectrogram_cnn": 11.922891855239868
+    }
+}

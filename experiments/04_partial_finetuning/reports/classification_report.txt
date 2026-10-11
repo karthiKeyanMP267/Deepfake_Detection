@@ -1,0 +1,10 @@
+Phase-4 Partial Fine-Tuned Model Report
+=========================================
+Accuracy         : 0.9752
+Precision        : 0.9965
+Recall           : 0.9778
+F1 Score         : 0.9871
+Balanced Accuracy: 0.9363
+ROC-AUC          : 0.9825
+Real F1          : 0.6939
+Fake F1          : 0.9871

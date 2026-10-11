@@ -1,0 +1,12 @@
+{
+    "status": "PASSED",
+    "forward_finite": true,
+    "loss_finite": true,
+    "grads_finite": true,
+    "weights_after_step_finite": true,
+    "loss_values": {
+        "total_loss": 0.4505080282688141,
+        "classification_loss": 0.12062457203865051,
+        "contrastive_loss": 3.2988345623016357
+    }
+}

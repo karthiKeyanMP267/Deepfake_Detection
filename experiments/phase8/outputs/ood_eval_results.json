@@ -1,0 +1,11 @@
+{
+    "validation_samples_fitted": 2414,
+    "threshold_95": 27.926401042938227,
+    "threshold_99": 33.17287136077879,
+    "test_samples_evaluated": 604,
+    "high_reliability_count": 425,
+    "medium_reliability_count": 89,
+    "low_reliability_count": 90,
+    "in_distribution_count": 514,
+    "possibly_ood_count": 90
+}

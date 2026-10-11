@@ -1,0 +1,14 @@
+{
+    "Phase": "Phase 6 Forensic Analysis",
+    "Type": "INFERENCE_ONLY (Frozen Checkpoint)",
+    "Checkpoint Evaluated": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\05_full_3v3\\models\\best_model.pth",
+    "Checkpoint Epoch": 4,
+    "Checkpoint Validation F1": 0.9722222222222222,
+    "Test Manifest": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\03_vision_swin\\same_test_comparison\\test_manifest.csv",
+    "Test Samples": 604,
+    "Experiments Executed": [
+        "Experiment A: Missing Audio Robustness & Vision-Only Fallback",
+        "Experiment B: Dubbed Audio & Audio-Visual Inconsistency Forensics"
+    ],
+    "Verification Status": "PASSED"
+}

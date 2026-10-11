@@ -1,0 +1,9 @@
+{
+    "Total Parameters": 55717734,
+    "Trainable Parameters": 4037124,
+    "Model Size (MB)": 212.55,
+    "Average Inference Time (s)": 0.0819,
+    "FPS": 12.21,
+    "Peak GPU Memory (MB)": 1990.72,
+    "Estimated GFLOPs": "N/A (3D Swin ~8.8 GFLOPs per frame sequence)"
+}

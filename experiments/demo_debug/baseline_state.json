@@ -1,0 +1,20 @@
+{
+    "timestamp": "2026-08-28 22:32:14",
+    "checkpoint_path": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\05_full_3v3\\models\\best_model.pth",
+    "checkpoint_size_bytes": 763326482,
+    "checkpoint_last_modified": "2026-08-24 20:04:56",
+    "checkpoint_epoch": 4,
+    "checkpoint_val_f1": 0.9722222222222222,
+    "classification_threshold": 0.5,
+    "consistency_threshold": 0.1177,
+    "video_1": {
+        "original_path": "C:\\Users\\karthikeyan\\Videos\\Screen Recordings\\Screen Recording 2026-08-28 222131.mp4",
+        "debug_path": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\demo_debug\\videos\\video1_222131.mp4",
+        "size_bytes": 14022064
+    },
+    "video_2": {
+        "original_path": "C:\\Users\\karthikeyan\\Videos\\Screen Recordings\\Screen Recording 2026-08-28 222513.mp4",
+        "debug_path": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\demo_debug\\videos\\video2_222513.mp4",
+        "size_bytes": 13344564
+    }
+}

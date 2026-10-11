@@ -1,0 +1,8 @@
+Phase-3 Video Swin Evaluation Report
+===================================
+Accuracy         : 0.9752
+Precision        : 0.9948
+Recall           : 0.9795
+F1 Score         : 0.9871
+Balanced Accuracy: 0.9108
+ROC-AUC          : 0.9880

@@ -1,0 +1,98 @@
+{
+    "test_manifest": {
+        "total_samples": 604,
+        "real_samples": 19,
+        "fake_samples": 585,
+        "manifest_path": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\03_vision_swin\\same_test_comparison\\test_manifest.csv"
+    },
+    "baseline_weighted_sampler": {
+        "accuracy": 0.7317880794701986,
+        "precision": 0.9774266365688488,
+        "recall": 0.7401709401709402,
+        "f1": 0.8424124513618677,
+        "auc": 0.5998650472334682,
+        "balanced_accuracy": 0.606927575348628,
+        "precision_real": 0.055900621118012424,
+        "recall_real": 0.47368421052631576,
+        "f1_real": 0.1,
+        "precision_fake": 0.9774266365688488,
+        "recall_fake": 0.7401709401709402,
+        "f1_fake": 0.8424124513618677,
+        "specificity": 0.47368421052631576,
+        "sensitivity": 0.7401709401709402,
+        "raw_confusion_matrix": [
+            [
+                9,
+                10
+            ],
+            [
+                152,
+                433
+            ]
+        ],
+        "normalized_confusion_matrix": [
+            [
+                0.47368421052631576,
+                0.5263157894736842
+            ],
+            [
+                0.25982905982905985,
+                0.7401709401709402
+            ]
+        ],
+        "tn": 9,
+        "fp": 10,
+        "fn": 152,
+        "tp": 433
+    },
+    "phase3_video_swin": {
+        "accuracy": 0.9751655629139073,
+        "precision": 0.9947916666666666,
+        "recall": 0.9794871794871794,
+        "f1": 0.9870801033591732,
+        "auc": 0.9879892037786774,
+        "balanced_accuracy": 0.9107962213225371,
+        "precision_real": 0.5714285714285714,
+        "recall_real": 0.8421052631578947,
+        "f1_real": 0.6808510638297872,
+        "precision_fake": 0.9947916666666666,
+        "recall_fake": 0.9794871794871794,
+        "f1_fake": 0.9870801033591732,
+        "specificity": 0.8421052631578947,
+        "sensitivity": 0.9794871794871794,
+        "raw_confusion_matrix": [
+            [
+                16,
+                3
+            ],
+            [
+                12,
+                573
+            ]
+        ],
+        "normalized_confusion_matrix": [
+            [
+                0.8421052631578947,
+                0.15789473684210525
+            ],
+            [
+                0.020512820512820513,
+                0.9794871794871794
+            ]
+        ],
+        "tn": 16,
+        "fp": 3,
+        "fn": 12,
+        "tp": 573
+    },
+    "paired_analysis": {
+        "both_correct": 436,
+        "baseline_only_correct": 6,
+        "phase3_only_correct": 153,
+        "both_wrong": 9,
+        "accuracy_diff": 0.2433774834437087,
+        "f1_diff": 0.14466765199730547,
+        "auc_diff": 0.38812415654520915,
+        "balanced_accuracy_diff": 0.30386864597390917
+    }
+}

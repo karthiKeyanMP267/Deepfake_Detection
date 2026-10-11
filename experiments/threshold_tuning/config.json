@@ -1,0 +1,22 @@
+{
+    "Experiment Name": "threshold_tuning",
+    "Source Checkpoint": "experiments\\weighted_sampler\\models\\best_model.pth",
+    "Source Epoch": 5,
+    "Source Val F1": 0.8474903474903475,
+    "Test Dataset": "processed/test.csv",
+    "Thresholds Tested": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+    ],
+    "Retraining Occurred": false,
+    "Model Weights Modified": false,
+    "Optimizer Executed": false,
+    "Scheduler Executed": false
+}

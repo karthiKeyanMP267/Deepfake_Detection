@@ -1,0 +1,30 @@
+{
+    "Experiment Name": "class_weight",
+    "Timestamp": "2026-07-30 10:46:50",
+    "Architecture": "Multimodal",
+    "Vision Model": "EfficientNet-B0",
+    "Audio Model": "Whisper",
+    "Fusion Method": "Adaptive Attention Fusion",
+    "Contrastive Enabled": true,
+    "Loss Function": "Class-Weighted CrossEntropyLoss",
+    "Computed Class Weights": [
+        18.773333333333333,
+        0.5136811382707042
+    ],
+    "Sampler": "Disabled",
+    "Shuffle": "Enabled",
+    "Optimizer": "AdamW",
+    "Learning Rate": 0.0001,
+    "Weight Decay": 1e-05,
+    "Scheduler": "ReduceLROnPlateau",
+    "Batch Size": 2,
+    "Epochs": 15,
+    "Random Seed": 42,
+    "Dataset Used": "processed/train.csv",
+    "train_csv": "processed/train.csv",
+    "val_csv": "processed/val.csv",
+    "device": "cuda",
+    "subsample_ratio": 0.25,
+    "Checkpoint Path": "experiments\\class_weight\\models\\best_model.pth",
+    "Git Commit": "N/A"
+}

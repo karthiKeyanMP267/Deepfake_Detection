@@ -1,0 +1,46 @@
+{
+    "optimal_temperature": 0.7924216985702515,
+    "fitted_on": "val_features.pt (2414 samples)",
+    "test_samples": 604,
+    "raw_ece": 0.05253861212967244,
+    "calibrated_ece": 0.032138662326414824,
+    "raw_brier": 0.023683104967389373,
+    "calibrated_brier": 0.020626225613584463,
+    "bin_details_calibrated": [
+        {
+            "bin_range": "[0.5, 0.6]",
+            "samples_count": 8,
+            "avg_confidence": 0.5452936887741089,
+            "accuracy": 0.375,
+            "calibration_gap": 0.1702936887741089
+        },
+        {
+            "bin_range": "[0.6, 0.7]",
+            "samples_count": 13,
+            "avg_confidence": 0.6482695937156677,
+            "accuracy": 0.7692307692307693,
+            "calibration_gap": 0.12096117551510155
+        },
+        {
+            "bin_range": "[0.7, 0.8]",
+            "samples_count": 19,
+            "avg_confidence": 0.748950183391571,
+            "accuracy": 0.9473684210526315,
+            "calibration_gap": 0.19841823766106048
+        },
+        {
+            "bin_range": "[0.8, 0.9]",
+            "samples_count": 45,
+            "avg_confidence": 0.8567938208580017,
+            "accuracy": 0.9111111111111111,
+            "calibration_gap": 0.054317290253109385
+        },
+        {
+            "bin_range": "[0.9, 1.0]",
+            "samples_count": 519,
+            "avg_confidence": 0.976372480392456,
+            "accuracy": 0.9961464354527938,
+            "calibration_gap": 0.019773955060337745
+        }
+    ]
+}

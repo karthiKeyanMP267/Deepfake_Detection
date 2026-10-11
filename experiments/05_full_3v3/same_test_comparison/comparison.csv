@@ -1,0 +1,3 @@
+Model,Test Accuracy,Precision,Recall,F1,ROC-AUC,Balanced Accuracy,Real F1,Fake F1
+Reference (EfficientNet + Swin + Whisper),0.9752,0.9948,0.9795,0.9871,0.988,0.9108,0.6897,0.9871
+Phase 5 Full 3V3 (EfficientNet+Swin+FaceMouth + Whisper+Wav2Vec2+SpecCNN),0.9752,0.9965,0.9778,0.9871,0.9902,0.9363,0.6939,0.9871

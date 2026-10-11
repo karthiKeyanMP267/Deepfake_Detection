@@ -1,0 +1,16 @@
+FINAL 3V3 MULTIMODAL TEST EVALUATION REPORT
+==========================================
+
+              precision    recall  f1-score   support
+
+        Real     0.5667    0.8947    0.6939        19
+        Fake     0.9965    0.9778    0.9871       585
+
+    accuracy                         0.9752       604
+   macro avg     0.7816    0.9363    0.8405       604
+weighted avg     0.9830    0.9752    0.9778       604
+
+Balanced Accuracy: 0.9363
+ROC-AUC          : 0.9902
+Specificity      : 0.8947
+Sensitivity      : 0.9778

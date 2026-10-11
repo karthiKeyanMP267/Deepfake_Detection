@@ -1,0 +1,44 @@
+{
+    "audio_visual_consistency_statistics": {
+        "normal_matched": {
+            "mean_similarity": 0.2618,
+            "std_similarity": 0.1441,
+            "min_similarity": -0.1781,
+            "max_similarity": 0.6012,
+            "samples_flagged_inconsistent": 103,
+            "percent_flagged_inconsistent": 17.05
+        },
+        "controlled_mismatched_dubbed": {
+            "mean_similarity": -0.006,
+            "std_similarity": 0.1925,
+            "min_similarity": -0.4525,
+            "max_similarity": 0.4704,
+            "samples_flagged_inconsistent": 433,
+            "percent_flagged_inconsistent": 71.69
+        },
+        "separation_margin": 0.2678,
+        "exploratory_consistency_threshold": 0.1177
+    },
+    "mismatched_classification_performance": {
+        "accuracy": 0.9768211920529801,
+        "precision": 0.9948006932409013,
+        "recall": 0.9811965811965812,
+        "f1": 0.9879518072289156,
+        "auc": 0.9832658569500675,
+        "balanced_accuracy": 0.911650922177238,
+        "sensitivity": 0.9811965811965812,
+        "specificity": 0.8421052631578947,
+        "precision_real": 0.5925925925925926,
+        "recall_real": 0.8421052631578947,
+        "f1_real": 0.6956521739130435,
+        "precision_fake": 0.9948006932409013,
+        "recall_fake": 0.9811965811965812,
+        "f1_fake": 0.9879518072289156,
+        "confusion_matrix": {
+            "TN": 16,
+            "FP": 3,
+            "FN": 11,
+            "TP": 574
+        }
+    }
+}

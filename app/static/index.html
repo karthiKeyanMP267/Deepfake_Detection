@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal Deepfake Forensic Analyzer — 3V3 Adaptive Fusion</title>
+    <meta name="description" content="Agent-Assisted Multimodal Deepfake Detection via Cross-Modal Consistency Learning and Adaptive Fusion.">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css?v=3.0">
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="brand-title">VeriDeep <span class="brand-tag">3V3 MULTIMODAL</span></div>
+                    <div class="brand-subtitle">Cross-Modal Consistency & Adaptive Fusion Forensic Detection</div>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div id="backend-status-badge" class="badge badge-success">
+                    <span class="status-dot"></span>
+                    <span id="backend-status-text">System Ready (CUDA)</span>
+                </div>
+                <button type="button" id="btn-about-trigger" class="btn btn-outline btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    About Model
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Header Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-pill">Multimodal Media Forensics</span>
+                <h1 class="hero-title">Deepfake Verification & Modality Analysis</h1>
+                <p class="hero-description">
+                    Autonomous audio-visual forensic analysis combining 3 vision backbones, 3 audio backbones, cross-modal synchronization (<span class="mono">S<sub>AV</sub></span>), and evidence-grounded agentic reasoning.
+                </p>
+            </div>
+        </section>
+
+        <!-- Video Upload & Analysis Workspace -->
+        <section class="card workspace-card">
+            <div class="card-header">
+                <div class="card-header-left">
+                    <div class="icon-circle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="18" height="18" x="3" y="3" rx="2"/>
+                            <path d="m9 8 6 4-6 4Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="card-title">Video Analysis Workspace</h2>
+                        <p class="card-subtitle">Upload video for frame-level extraction, acoustic analysis, and cross-modal verification</p>
+                    </div>
+                </div>
+                <div class="file-spec-pill">MP4, AVI, MOV, MKV, WebM &bull; Max 100 MB</div>
+            </div>
+
+            <!-- Hidden File Input -->
+            <input type="file" id="video-input" accept=".mp4,.avi,.mov,.mkv,.webm" style="display: none;">
+
+            <div class="workspace-grid">
+                <!-- Dropzone Area -->
+                <div id="dropzone" class="upload-dropzone" tabindex="0" role="button" aria-label="Upload Video">
+                    <div class="upload-icon-container">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <div class="dropzone-text-main">Drag and drop your video file here</div>
+                    <div class="dropzone-text-sub">or click anywhere to browse from local disk</div>
+                    <button type="button" class="btn btn-outline btn-sm" id="btn-browse-trigger">
+                        Choose Video File
+                    </button>
+                </div>
+
+                <!-- Video Preview & Metadata Panel -->
+                <div id="preview-panel" class="preview-panel">
+                    <!-- Placeholder when no file selected -->
+                    <div id="preview-placeholder" class="preview-placeholder">
+                        <div class="placeholder-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                <path d="m9 8 6 4-6 4Z"/>
+                            </svg>
+                        </div>
+                        <span class="placeholder-title">No Video Selected</span>
+                        <span class="placeholder-desc">Upload a file or click a benchmark sample below to preview playback</span>
+                    </div>
+
+                    <!-- Video Player when file selected -->
+                    <div id="preview-content" class="preview-content hidden">
+                        <div class="video-container">
+                            <video id="video-player" class="video-player" controls playsinline preload="metadata"></video>
+                        </div>
+                        <div class="video-meta-bar">
+                            <div class="video-meta-details">
+                                <span id="meta-filename" class="meta-filename">video.mp4</span>
+                                <span id="meta-filesize" class="meta-filesize">0 MB</span>
+                            </div>
+                            <div class="video-meta-actions">
+                                <span id="meta-format-badge" class="badge badge-neutral">MP4</span>
+                                <button type="button" id="btn-clear-file" class="btn-icon-clear" title="Remove video">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="18" y1="6" x2="6" y2="18"/>
+                                        <line x1="6" y1="6" x2="18" y2="18"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benchmark Preset Samples (Instant 1-Click Verification) -->
+            <div class="preset-section">
+                <div class="preset-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    <span>Quick Test Benchmark Cases:</span>
+                </div>
+                <div id="demo-buttons-container" class="preset-buttons">
+                    <button type="button" class="btn-preset" data-id="case_01_authentic">
+                        <span class="preset-dot dot-green"></span> Authentic Video
+                    </button>
+                    <button type="button" class="btn-preset" data-id="case_02_deepfake_multimodal">
+                        <span class="preset-dot dot-red"></span> Full Deepfake (Video + Audio)
+                    </button>
+                    <button type="button" class="btn-preset" data-id="case_03_missing_audio">
+                        <span class="preset-dot dot-amber"></span> Silent Video (Fallback)
+                    </button>
+                    <button type="button" class="btn-preset" data-id="case_04_dubbed_mismatch">
+                        <span class="preset-dot dot-purple"></span> Dubbed Audio (AV Mismatch)
+                    </button>
+                    <button type="button" class="btn-preset" data-id="case_06_external_screen_recording_1">
+                        <span class="preset-dot dot-blue"></span> External Screen Capture (OOD)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Primary Action Row -->
+            <div class="action-row">
+                <button id="analyze-btn" class="btn btn-primary btn-lg" disabled>
+                    <span id="btn-spinner" class="spinner hidden"></span>
+                    <span id="btn-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </span>
+                    <span id="btn-text">Analyse Video</span>
+                </button>
+                <button id="btn-reset-analysis" class="btn btn-outline btn-lg hidden">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                        <path d="M21 3v5h-5"/>
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                        <path d="M8 16H3v5"/>
+                    </svg>
+                    Analyse Another Video
+                </button>
+            </div>
+
+            <!-- Non-Fabricated Processing Progress Stepper -->
+            <div id="loading-stepper" class="stepper-container hidden">
+                <div class="stepper-bar-bg">
+                    <div id="stepper-progress" class="stepper-bar-fill"></div>
+                </div>
+                <div class="stepper-meta">
+                    <span id="stepper-status-text" class="stepper-text">Preparing media pipeline...</span>
+                    <span id="stepper-subtext" class="stepper-subtext">Executing 6-encoder multimodal pipeline</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Visible after analysis) -->
+        <section id="results-section" class="results-section hidden">
+
+            <!-- Reliability / OOD Warning Notice (Shown ONLY if applicable) -->
+            <div id="ood-alert-banner" class="alert alert-warning hidden">
+                <div class="alert-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="alert-body">
+                    <h4 class="alert-title">Reliability & Out-of-Distribution Warning</h4>
+                    <p id="ood-alert-desc" class="alert-description">
+                        The video differs from verified benchmark conditions (e.g. low facial area ratio or non-standard container). Results should be interpreted with caution.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modality Results Grid (4 Core Distinct Cards) -->
+            <div class="modality-grid">
+
+                <!-- 1. Overall Multimodal Classification Card -->
+                <div id="card-overall" class="result-card overall-card">
+                    <div class="result-card-header">
+                        <span class="card-tag">OVERALL CLASSIFICATION</span>
+                        <span id="overall-badge" class="status-pill pill-real">REAL</span>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="verdict-headline">
+                            <span id="overall-verdict-title" class="verdict-text text-real">AUTHENTIC MEDIA</span>
+                        </div>
+                        <div class="confidence-container">
+                            <div class="confidence-label-row">
+                                <span class="label-caption">Multimodal Confidence</span>
+                                <span id="overall-confidence-text" class="label-value">98.4%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div id="overall-confidence-bar" class="progress-fill fill-real" style="width: 98.4%;"></div>
+                            </div>
+                        </div>
+                        <p id="overall-desc-text" class="card-explanation">
+                            Authoritative multimodal classification derived from 3 visual and 3 audio backbones fused via adaptive attention.
+                        </p>
+                        <div id="overall-discrepancy-box" class="discrepancy-note hidden">
+                            <span class="discrepancy-icon">ℹ</span>
+                            <span id="overall-discrepancy-text">Modalities exhibit diverging authenticity scores.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Video Analysis (Visual Stream) Card -->
+                <div id="card-video" class="result-card">
+                    <div class="result-card-header">
+                        <span class="card-tag">VIDEO ANALYSIS</span>
+                        <span id="video-badge" class="status-pill pill-real">REAL</span>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="verdict-headline">
+                            <span id="video-verdict-title" class="verdict-text text-real">REAL</span>
+                        </div>
+                        <div class="confidence-container">
+                            <div class="confidence-label-row">
+                                <span class="label-caption">Visual Stream Confidence</span>
+                                <span id="video-confidence-text" class="label-value">97.8%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div id="video-confidence-bar" class="progress-fill fill-real" style="width: 97.8%;"></div>
+                            </div>
+                        </div>
+                        <div class="evidence-list-container">
+                            <span class="evidence-header-label">Visual Stream Evidence:</span>
+                            <ul id="video-evidence-list" class="evidence-list">
+                                <li>Facial texture analysis shows organic high-frequency fidelity (EfficientNet-B0).</li>
+                                <li>Inter-frame motion continuity is coherent across 16 frames (Video Swin-Tiny).</li>
+                                <li>Facial landmarks and perioral geometry conform to natural constraints (Face/Mouth ResNet-18).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Audio Analysis (Acoustic Stream) Card -->
+                <div id="card-audio" class="result-card">
+                    <div class="result-card-header">
+                        <span class="card-tag">AUDIO ANALYSIS</span>
+                        <span id="audio-badge" class="status-pill pill-neutral">EVALUATED JOINTLY</span>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="verdict-headline">
+                            <span id="audio-verdict-title" class="verdict-text text-neutral">EVALUATED JOINTLY</span>
+                        </div>
+                        <div class="audio-notice-box">
+                            <p id="audio-explanation-text" class="audio-notice-text">
+                                Acoustic features are evaluated jointly through cross-modal fusion with 48.2% attention weight. Independent standalone audio classification head was not trained in this checkpoint.
+                            </p>
+                        </div>
+                        <div class="evidence-list-container">
+                            <span class="evidence-header-label">Acoustic Feature Telemetry:</span>
+                            <ul id="audio-evidence-list" class="evidence-list">
+                                <li>Acoustic stream processed across Whisper-Base, Wav2Vec2-Base, and Spectrogram-CNN.</li>
+                                <li>Joint evaluation via cross-modal fusion and temporal consistency analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Audio-Video Consistency Card -->
+                <div id="card-consistency" class="result-card">
+                    <div class="result-card-header">
+                        <span class="card-tag">AUDIO-VIDEO CONSISTENCY</span>
+                        <span id="consistency-badge" class="status-pill pill-real">CONSISTENT</span>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="verdict-headline">
+                            <span id="consistency-verdict-title" class="verdict-text text-real">SYNCHRONIZED</span>
+                        </div>
+                        <div class="score-container">
+                            <div class="score-row">
+                                <span class="score-label">Cosine Similarity S<sub>AV</sub>:</span>
+                                <span id="consistency-score-badge" class="score-badge mono">+0.3842</span>
+                            </div>
+                            <span class="score-threshold-hint">Synchronization threshold: &tau; &ge; 0.1177</span>
+                        </div>
+                        <p id="consistency-desc-text" class="card-explanation">
+                            Visual speech articulation and acoustic phonetics exhibit coherent alignment without synthetic desynchronization.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Agent-Assisted Forensic Explanation Card -->
+            <div class="card explanation-card">
+                <div class="explanation-card-header">
+                    <div class="explanation-header-left">
+                        <div class="agent-badge-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="explanation-title">Forensic Intelligence Report</h3>
+                            <span class="explanation-subtitle">Evidence-grounded explanation synthesized from detector telemetry</span>
+                        </div>
+                    </div>
+                    <button type="button" id="download-report-btn" class="btn btn-outline btn-sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Export Report (.md)
+                    </button>
+                </div>
+
+                <div class="explanation-body">
+                    <div class="explanation-block">
+                        <h4 class="block-heading">Executive Forensic Summary</h4>
+                        <p id="agent-summary-text" class="narrative-text">
+                            Loading forensic intelligence narrative...
+                        </p>
+                    </div>
+
+                    <div class="explanation-block">
+                        <h4 class="block-heading">Corroborating Evidence Points</h4>
+                        <ul id="key-evidence-list" class="evidence-bullets">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="recommendation-callout">
+                        <span class="rec-title">Operational Recommendation:</span>
+                        <span id="agent-recommendation-text" class="rec-body">Media verification complete.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Technical Details & Diagnostics -->
+            <div class="card technical-card">
+                <details class="tech-accordion" id="tech-accordion">
+                    <summary class="tech-summary">
+                        <div class="tech-summary-left">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            <span class="tech-title">Technical Diagnostics & Telemetry</span>
+                        </div>
+                        <span class="tech-toggle-hint">Click to expand</span>
+                    </summary>
+
+                    <div class="tech-body">
+                        <!-- Modality Attention Meter -->
+                        <div class="tech-block">
+                            <h5 class="tech-section-title">Multimodal Attention Allocation (&alpha;<sub>v</sub> vs &alpha;<sub>a</sub>)</h5>
+                            <div class="meter-labels">
+                                <span id="tech-vis-weight">Visual Weight: 50.0%</span>
+                                <span id="tech-aud-weight">Audio Weight: 50.0%</span>
+                            </div>
+                            <div class="meter-track">
+                                <div id="tech-vis-meter" class="meter-fill-vision" style="width: 50%;"></div>
+                                <div id="tech-aud-meter" class="meter-fill-audio" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- 12-Criterion Telemetry Table -->
+                        <div class="tech-block">
+                            <h5 class="tech-section-title">Observable Telemetry & Benchmark Alignment</h5>
+                            <div class="table-responsive">
+                                <table class="tech-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Criterion</th>
+                                            <th>Observed Measurement</th>
+                                            <th>Benchmark Standard</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tech-evidence-matrix-body">
+                                        <!-- Dynamically generated rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Runtime & Hardware Metadata -->
+                        <div class="tech-footer-meta">
+                            <span>Inference Latency: <strong id="tech-latency">0 ms</strong></span>
+                            <span>Execution Device: <strong id="tech-device">CUDA</strong></span>
+                            <span>Checkpoint: <strong>Epoch 4 (Val F1: 0.9722)</strong></span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- About Architecture Modal -->
+    <div id="about-modal" class="modal-backdrop hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <h3 class="modal-title">3V3 Multimodal Deepfake Architecture</h3>
+                    <p class="modal-subtitle">Agent-Assisted Cross-Modal Consistency Learning & Adaptive Fusion</p>
+                </div>
+                <button type="button" id="btn-close-about" class="btn-close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4>Vision Feature Stream (3 Encoders)</h4>
+                    <ul>
+                        <li><strong>EfficientNet-B0 (1280-D):</strong> Frame-level spatial texture & high-frequency synthesis artifact detection.</li>
+                        <li><strong>Video Swin-Tiny (768-D):</strong> 3D spatio-temporal video transformer capturing inter-frame continuity anomalies.</li>
+                        <li><strong>Face/Mouth ResNet-18 (512-D):</strong> 2D facial landmark & perioral articulation dynamics.</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Audio Feature Stream (3 Encoders)</h4>
+                    <ul>
+                        <li><strong>Whisper-Base (512-D):</strong> Phonetic & semantic speech representation encoding.</li>
+                        <li><strong>Wav2Vec2-Base (768-D):</strong> Self-supervised acoustic latent features for vocoder artifact detection.</li>
+                        <li><strong>Spectrogram-CNN (256-D):</strong> Mel-spectrogram time-frequency acoustic distribution analysis.</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Fusion & Forensic Intelligence</h4>
+                    <ul>
+                        <li><strong>Cross-Modal Consistency (S<sub>AV</sub>):</strong> Evaluates cosine similarity between normalized 256-D vision and audio projection heads against threshold &tau; = 0.1177.</li>
+                        <li><strong>Adaptive Fusion:</strong> Softmax attention network dynamically allocating modality weights &alpha;<sub>v</sub> and &alpha;<sub>a</sub> with trained video-only fallback.</li>
+                        <li><strong>Forensic Reasoning Agent:</strong> Synthesizes grounded explanations directly from detector evidence with strict anti-hallucination guardrails.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <span>Agent-Assisted Multimodal Deepfake Detection via Cross-Modal Consistency Learning and Adaptive Fusion</span>
+            <span class="footer-meta">Model Checkpoint: Phase 5 3V3 (Val F1: 0.9722)</span>
+        </div>
+    </footer>
+
+    <!-- Frontend Controller Script -->
+    <script src="/static/js/app.js?v=3.0"></script>
+</body>
+</html>

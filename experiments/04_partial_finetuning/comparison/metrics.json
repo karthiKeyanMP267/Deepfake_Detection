@@ -1,0 +1,95 @@
+{
+    "test_manifest": {
+        "total_samples": 604,
+        "manifest_path": "D:\\Deepfake\\Agentic-Multimodal-Deepfake-Detection\\experiments\\03_vision_swin\\same_test_comparison\\test_manifest.csv"
+    },
+    "phase3_vision_swin_whisper_frozen": {
+        "accuracy": 0.9751655629139073,
+        "precision": 0.9947916666666666,
+        "recall": 0.9794871794871794,
+        "f1": 0.9870801033591732,
+        "auc": 0.9879892037786774,
+        "balanced_accuracy": 0.9107962213225371,
+        "precision_real": 0.5714285714285714,
+        "recall_real": 0.8421052631578947,
+        "f1_real": 0.6808510638297872,
+        "precision_fake": 0.9947916666666666,
+        "recall_fake": 0.9794871794871794,
+        "f1_fake": 0.9870801033591732,
+        "specificity": 0.8421052631578947,
+        "sensitivity": 0.9794871794871794,
+        "raw_confusion_matrix": [
+            [
+                16,
+                3
+            ],
+            [
+                12,
+                573
+            ]
+        ],
+        "normalized_confusion_matrix": [
+            [
+                0.8421052587257617,
+                0.15789473601108034
+            ],
+            [
+                0.02051282050931405,
+                0.9794871793197458
+            ]
+        ],
+        "tn": 16,
+        "fp": 3,
+        "fn": 12,
+        "tp": 573
+    },
+    "phase4_vision_swin_whisper_wav2vec2_finetuned": {
+        "accuracy": 0.9751655629139073,
+        "precision": 0.9965156794425087,
+        "recall": 0.9777777777777777,
+        "f1": 0.9870578084555651,
+        "auc": 0.9825461088618983,
+        "balanced_accuracy": 0.9362573099415205,
+        "precision_real": 0.5666666666666667,
+        "recall_real": 0.8947368421052632,
+        "f1_real": 0.6938775510204082,
+        "precision_fake": 0.9965156794425087,
+        "recall_fake": 0.9777777777777777,
+        "f1_fake": 0.9870578084555651,
+        "specificity": 0.8947368421052632,
+        "sensitivity": 0.9777777777777777,
+        "raw_confusion_matrix": [
+            [
+                17,
+                2
+            ],
+            [
+                13,
+                572
+            ]
+        ],
+        "normalized_confusion_matrix": [
+            [
+                0.8947368373961219,
+                0.10526315734072021
+            ],
+            [
+                0.022222222218423553,
+                0.9777777776106363
+            ]
+        ],
+        "tn": 17,
+        "fp": 2,
+        "fn": 13,
+        "tp": 572,
+        "training_duration_seconds": 117296.67358613014,
+        "avg_inference_time_per_sample_seconds": 1.2261100182470106
+    },
+    "comparison_diff": {
+        "accuracy_diff": 0.0,
+        "f1_diff": -2.2294903608055527e-05,
+        "auc_diff": -0.005443094916779079,
+        "balanced_accuracy_diff": 0.02546108861898333,
+        "real_f1_diff": 0.013026487190620939
+    }
+}

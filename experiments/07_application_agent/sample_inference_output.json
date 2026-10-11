@@ -1,0 +1,70 @@
+{
+    "prediction": "FAKE",
+    "confidence": 0.9941,
+    "confidence_percentage": 99.41,
+    "probability_real": 0.0059,
+    "probability_fake": 0.9941,
+    "audio_available": true,
+    "fusion_weights": {
+        "vision": 0.612,
+        "audio": 0.388
+    },
+    "av_consistency": 0.0412,
+    "vision_evidence": [
+        "Visual branch detected spatio-temporal artifacts across facial regions (EfficientNet-B0 texture analysis).",
+        "Temporal inter-frame dynamics exhibit motion inconsistency indicative of synthetic synthesis (Video Swin Transformer).",
+        "Perioral and facial articulation patterns indicate unnatural boundary or warping anomalies (Face/Mouth ResNet-18)."
+    ],
+    "audio_evidence": [
+        "Acoustic feature representations exhibit spectral characteristics typical of synthetic vocoders (Wav2Vec2 + Spectrogram CNN).",
+        "Phonetic distribution analysis indicates potential voice cloning or artificial synthesis markers (Whisper encoder)."
+    ],
+    "forensic_evidence": [
+        "Visual branch detected spatio-temporal artifacts across facial regions (EfficientNet-B0 texture analysis).",
+        "Temporal inter-frame dynamics exhibit motion inconsistency indicative of synthetic synthesis (Video Swin Transformer).",
+        "Perioral and facial articulation patterns indicate unnatural boundary or warping anomalies (Face/Mouth ResNet-18).",
+        "Acoustic feature representations exhibit spectral characteristics typical of synthetic vocoders (Wav2Vec2 + Spectrogram CNN).",
+        "Phonetic distribution analysis indicates potential voice cloning or artificial synthesis markers (Whisper encoder)."
+    ],
+    "agent_analysis": {
+        "verdict": "FAKE",
+        "confidence_percentage": 99.41,
+        "probability_real": 0.0059,
+        "probability_fake": 0.9941,
+        "reasoning": "The multimodal detection system classified this media as FAKE with 99.4% confidence (deepfake probability: 0.9941). Adaptive fusion allocated 61.2% weight to the visual pathway and 38.8% to the acoustic pathway. Evidence from spatial textures (EfficientNet), temporal video motion (Video Swin), and facial articulations (Face/Mouth ResNet) combined with speech spectral features to establish synthetic manipulation. Forensic Notice: Cross-modal consistency is low (S_AV = 0.0412), indicating that the audio track does not naturally match the visual lip articulation (possible dubbing or voice swap).",
+        "narrative_reasoning": "The multimodal detection system classified this media as FAKE with 99.4% confidence (deepfake probability: 0.9941). Adaptive fusion allocated 61.2% weight to the visual pathway and 38.8% to the acoustic pathway. Evidence from spatial textures (EfficientNet), temporal video motion (Video Swin), and facial articulations (Face/Mouth ResNet) combined with speech spectral features to establish synthetic manipulation. Forensic Notice: Cross-modal consistency is low (S_AV = 0.0412), indicating that the audio track does not naturally match the visual lip articulation (possible dubbing or voice swap).",
+        "risk_level": "CRITICAL",
+        "recommendation": "High-confidence deepfake detection. Quarantine media and flag as synthetic content across ingestion pipelines.",
+        "visual_evidence": [
+            "Visual branch detected spatio-temporal artifacts across facial regions (EfficientNet-B0 texture analysis).",
+            "Temporal inter-frame dynamics exhibit motion inconsistency indicative of synthetic synthesis (Video Swin Transformer).",
+            "Perioral and facial articulation patterns indicate unnatural boundary or warping anomalies (Face/Mouth ResNet-18)."
+        ],
+        "audio_evidence": [
+            "Acoustic feature representations exhibit spectral characteristics typical of synthetic vocoders (Wav2Vec2 + Spectrogram CNN).",
+            "Phonetic distribution analysis indicates potential voice cloning or artificial synthesis markers (Whisper encoder)."
+        ],
+        "cross_modal_analysis": {
+            "score": 0.0412,
+            "status": "Mismatch / Desynchronization Detected",
+            "is_mismatched": true,
+            "threshold": 0.1177,
+            "detail": "Audio-visual embedding consistency score (0.0412) is below the consistency threshold (0.1177). This indicates cross-modal desynchronization, potential voice dubbing, or out-of-sync audio track."
+        },
+        "fusion_breakdown": {
+            "vision_weight": 0.612,
+            "audio_weight": 0.388,
+            "mode": "Adaptive Multimodal (3V3)",
+            "explanation": "Modality attention network assigned 61.2% to visual stream and 38.8% to acoustic stream."
+        }
+    },
+    "markdown_report": "# Forensic Deepfake Analysis Report\n\n**Target Asset:** `case_02_deepfake_multimodal.mp4`  \n**Analysis Timestamp:** `2026-08-28 21:43:47`  \n**Architecture:** Full 3-Vision + 3-Audio Multimodal (6 Encoders)  \n**Evaluation Mode:** Inference-Only (`torch.inference_mode()`)  \n\n---\n\n## 1. Executive Summary\n\n| Attribute | Forensic Value |\n| :--- | :--- |\n| **Final Forensic Verdict** | **FAKE** |\n| **Confidence Score** | **99.41%** |\n| **Probability (Real)** | 0.0059 |\n| **Probability (Fake / Synthetic)** | 0.9941 |\n| **Assessed Risk Level** | **CRITICAL** |\n| **Audio Availability** | YES (Multi-stream Active) |\n| **Cross-Modal Consistency ($S_{AV}$)** | 0.0412 (Mismatch / Desynchronization Detected) |\n\n---\n\n## 2. Modality Contribution & Adaptive Fusion\n\nThe adaptive fusion mechanism weighted the complementary sensory branches as follows:\n\n- **Visual Modality Weight ($\u0007lpha_{vision}$):** `0.6120` (61.2%)\n  - *Encoders:* EfficientNet-B0 (Spatial), Video Swin-Tiny (Temporal), Face/Mouth ResNet-18 (Articulation)\n- **Audio Modality Weight ($\u0007lpha_{audio}$):** `0.3880` (38.8%)\n  - *Encoders:* Whisper (Semantic), Wav2Vec2 (Acoustic), Spectrogram CNN (Time-Frequency)\n- **Fusion Mode:** `Adaptive Multimodal (3V3)`\n\n---\n\n## 3. Forensic Evidence Breakdown\n\n### Visual Branch Evidence:\n- Visual branch detected spatio-temporal artifacts across facial regions (EfficientNet-B0 texture analysis).\n- Temporal inter-frame dynamics exhibit motion inconsistency indicative of synthetic synthesis (Video Swin Transformer).\n- Perioral and facial articulation patterns indicate unnatural boundary or warping anomalies (Face/Mouth ResNet-18).\n\n### Audio Branch Evidence:\n- Acoustic feature representations exhibit spectral characteristics typical of synthetic vocoders (Wav2Vec2 + Spectrogram CNN).\n- Phonetic distribution analysis indicates potential voice cloning or artificial synthesis markers (Whisper encoder).\n\n### Cross-Modal Consistency & Synchronization:\n- **Consistency Score ($S_{AV}$):** `0.0412`\n- **Threshold:** `0.1177` (Phase-6 Forensic Baseline)\n- **Diagnostic:** Audio-visual embedding consistency score (0.0412) is below the consistency threshold (0.1177). This indicates cross-modal desynchronization, potential voice dubbing, or out-of-sync audio track.\n\n---\n\n## 4. Agentic Reasoning & Synthesis\n\n> The multimodal detection system classified this media as FAKE with 99.4% confidence (deepfake probability: 0.9941). Adaptive fusion allocated 61.2% weight to the visual pathway and 38.8% to the acoustic pathway. Evidence from spatial textures (EfficientNet), temporal video motion (Video Swin), and facial articulations (Face/Mouth ResNet) combined with speech spectral features to establish synthetic manipulation. Forensic Notice: Cross-modal consistency is low (S_AV = 0.0412), indicating that the audio track does not naturally match the visual lip articulation (possible dubbing or voice swap).\n\n---\n\n## 5. Risk Assessment & Operational Recommendation\n\n- **Assessed Risk Tier:** **CRITICAL**\n- **Actionable Recommendation:** High-confidence deepfake detection. Quarantine media and flag as synthetic content across ingestion pipelines.\n\n---\n*Report automatically generated by Agentic Multimodal Deepfake Forensic Analyzer.*\n",
+    "is_demo_sample": true,
+    "demo_case_id": "case_02_deepfake_multimodal",
+    "demo_metadata": {
+        "title": "Full Multimodal Deepfake (Faceswap + Voice Clone)",
+        "category": "Fake Video / Fake Audio",
+        "description": "Synthesized facial reenactment paired with neural vocoder acoustic cloning.",
+        "ground_truth": "FAKE"
+    }
+}
